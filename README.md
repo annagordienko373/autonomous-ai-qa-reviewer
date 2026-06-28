@@ -4,8 +4,6 @@
 
 Built using **Dify (DAG workflow)** and **Google Workspace (Google Apps Script)** via serverless webhooks.
 
-🚀 **Live Demo:** https://udify.app/chat/CfvMPnyGR7PQoF7C
-
 ---
 
 ## 🎯 The Problem & Business Impact
@@ -23,7 +21,7 @@ In modern agile workflows, QA Leads spend up to **30% of their operational time*
 
 The core intelligence engine leverages a Directed Acyclic Graph (DAG) workflow within Dify to isolate contexts, prevent LLM hallucinations, and ensure deterministic execution layers.
 
-![Dify Workflow Architecture](assets/dify-workflow.png)
+![Dify Workflow Architecture](dify-workflow.png)
 
 ### Key Architectural Components:
 1. **Semantic Conditioning:** Initial processing nodes analyze the layout and language context of the inputted testing artifact.
@@ -38,15 +36,18 @@ The AI Agent provides real-time, comprehensive, and multi-layered feedback direc
 
 ### 1. Artifact Analysis & Telemetry Generation
 The system processes raw inputs and generates structured technical analysis.
-![AI Agent Analysis Overview](assets/agent-ui1.png)
+
+![AI Agent Analysis Overview](agent-ui1.png)
 
 ### 2. Multi-Criteria Scoring Table
 A deterministic grading structure maps the artifact quality across verified QA benchmarks.
-![Evaluation Table Interface](assets/agent-ui2.png)
+
+![Evaluation Table Interface](agent-ui2.png)
 
 ### 3. Actionable Areas for Improvement
 Clear, objective bullet points highlight exact gaps in coverage or structure.
-![Actionable Insights Layer](assets/agent-ui3.png)
+
+![Actionable Insights Layer](agent-ui3.png)
 
 ---
 
