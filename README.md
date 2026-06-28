@@ -1,5 +1,7 @@
 Autonomous AI QA Reviewer & Management Assistant
-An enterprise-grade, multi-agent cascading system designed to automate the semantic analysis, evaluation, and logging of QA test documentation (checklists, test suites, and test cases). Built using Dify (DAG workflow architecture) and integrated seamlessly with Google Workspace (Google Apps Script / Sheets) via serverless webhooks.
+Enterprise-grade cascading agent system to automate QA document reviews and metrics logging.
+
+Built using Dify (DAG workflow) and Google Workspace (Google Apps Script) via serverless webhooks.
 
 🚀 Live Demo: https://udify.app/chat/CfvMPnyGR7PQoF7C 
 
@@ -20,7 +22,7 @@ The core intelligence engine leverages a Directed Acyclic Graph (DAG) workflow w
 Key Architectural Components:
 Semantic Conditioning: Initial processing nodes analyze the layout and language context of the inputted testing artifact.
 
-Cascading Expert Evaluation (LLM Cascades): Instead of a single generic prompt, the system routes data dynamically via conditional blocks (IF/ELSE) to specialized evaluation layers evaluating Test Coverage, Platform Specifics, and Logical Edge Cases.
+Cascading Expert Evaluation (LLM Cascades): Instead of a single generic prompt, the system routes data dynamically via conditional blocks (IF/ELSE) to specialized evaluation layers.
 
 Data Normalization Node: A dedicated clean-up layer processes markdown formats, stripping system symbols to guarantee strict syntax before data export.
 
@@ -36,19 +38,22 @@ A deterministic grading structure maps the artifact quality across verified QA b
 3. Actionable Areas for Improvement
 Clear, objective bullet points highlight exact gaps in coverage or structure.
 
-⚡ Integration Layer (Serverless Webhook Handlers)
+⚡ Integration Layer (Serverless Middleware)
 To ensure zero infrastructural overhead and maximum scalability, the data pipeline is completely serverless.
 
-JavaScript
-// Located in webhook_handler.js
-// Automated parsing of multi-agent inference data into structured datasets
-function doPost(e) {
-  // Processes inbound webhook payloads, cleans string data via RegEx, 
-  // and commits telemetry rows to Google Sheets DB in real-time.
-}
-Engine: Google Apps Script acted as an agile middleware layer.
+webhook_handler.js
+This script acts as the middleware layer, parsing telemetry data and committing it to the spreadsheet repository in real-time.
 
-Database: Structured Google Sheets setup serving as a central logging system and a scalable corporate knowledge base for QA telemetry.
+JavaScript
+/**
+ * processes inbound webhook payloads from Dify
+ */
+function doPost(e) {
+  // Uses RegEx for data normalization and appends rows to Google Sheets DB
+}
+Engine: Google Apps Script served as a flexible middleware.
+
+Database: Structured Google Sheets serving as a central logging system.
 
 📈 Key Metrics & Validation
 Evaluated over active iteration cycles, the system proved high accuracy and business viability:
@@ -60,10 +65,10 @@ Evaluated over active iteration cycles, the system proved high accuracy and busi
 🎯 Consistency: 100% deterministic logging of structured grades (1–5 scale), metrics, and actionable items.
 
 🔮 Strategic Roadmap
-[ ] Zero-Touch Integration: Establish automated webhooks triggered by Jira/YouTrack status transitions (e.g., when a task moves to "Ready for Review").
+[ ] Zero-Touch Integration: Establish automated webhooks triggered by Jira status transitions.
 
-[ ] Contextual Knowledge Retrieval (RAG): Integrate vector embedding databases containing specific product regulations and UX guidelines to enforce absolute compliance.
+[ ] Contextual Knowledge Retrieval (RAG): Integrate vector embedding databases with product regulations.
 
-[ ] Predictive Risk Analytics: Implement downstream parsing of historical test logs to predict software regression zones.
+[ ] Predictive Risk Analytics: Downstream parsing of logs to predict regression zones.
 
-Developed by a forward-thinking QA Lead focusing on AI Engineering, process optimization, and future-proof software quality assurance workflows.
+Developed by a forward-thinking QA Lead focusing on AI Engineering and process optimization.
